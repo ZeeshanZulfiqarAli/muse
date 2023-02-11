@@ -1,10 +1,8 @@
-# React Express Starter Pack
+# Muse
+An interactive radio music platform
 
-> Create full stack apps with React and Express. Run your client and server with a single command. 
-
-### Redux Version
-This version does not include Redux
-[Click Here For Redux Version](https://github.com/bradtraversy/react_redux_express_starter) 
+## Inspiration
+Inpired by the lofi girl videos with the idea of making it interactive.
 
 ## Quick Start
 
@@ -31,13 +29,5 @@ npm run client
 
 ### Author
 
-Brad Traversy
+Zeeshan
 [Traversy Media](http://www.traversymedia.com)
-
-### Version
-
-1.0.0
-
-### License
-
-This project is licensed under the MIT License
