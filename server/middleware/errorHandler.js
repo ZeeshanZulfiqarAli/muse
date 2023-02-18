@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../config.js';
 
 /**
  * 500 response & log when errors are raised.
@@ -12,7 +12,7 @@ import config from '../config';
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {
-    console.error(err);
+    console.error('err => ',err);
     return res.status(500).json({
         message: config.nodeEnv === 'production' ? 'unknown error' : `${err}`,
     });

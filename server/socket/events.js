@@ -4,7 +4,7 @@
  */
 const ioEvents = (io) => {
     io.on('connection', (socket) => {
-        console.log('connected');
+        console.log('connected =>>>>>>');
         socket.on('light', (isOn) => {
             socket.broadcast.timeout(10000).emit('light', isOn, (err, res) => {});
         });

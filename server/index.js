@@ -1,5 +1,5 @@
-import app from './app';
-import config from './config';
+import app from './app.js';
+import config from './config.js';
 
 app.listen(config.port, config.host, () => {
     // startStreaming();

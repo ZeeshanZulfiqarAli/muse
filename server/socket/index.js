@@ -1,6 +1,6 @@
 import { Server } from 'socket.io';
-import config from '../config';
-import ioEvents from './events';
+import config from '../config.js';
+import ioEvents from './events.js';
 
 /**
  * Initialize Socket.io
@@ -14,6 +14,8 @@ const init = (httpServer) => {
 
     // Define all Events
     ioEvents(io);
+
+    return io;
 };
 
 export default init;

@@ -28,7 +28,7 @@ export default function CanvasWrapper() {
     return (
         <Canvas>
             <Suspense fallback={null}>
-                <Model lightStatus={lightStatus} onLightClick={handleLightChange} />
+                {/* <Model lightStatus={lightStatus} onLightClick={handleLightChange} /> */}
                 <OrbitControls
                     target={[-2, 2, -1]}
                     maxAzimuthAngle={[0.1, 0.1]}
