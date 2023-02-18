@@ -1,3 +1,11 @@
 /node_modules
-package-lock.json 
-/media/*
+package-lock.json
+
+# Client
+/client/node_modules
+/client/package-lock.json
+/client/media/*
+
+# Server
+/server/node_modules
+/server/package-lock.json
