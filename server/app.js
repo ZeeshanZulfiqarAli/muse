@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import config from './config.js';
 import errorHandler from './middleware/errorHandler.js';
 import fourOhFour from './middleware/404.js';
-// import root from './routes/root.js';
+import stream from './routes/stream.js';
 import initSocket from './socket/index.js';
 
 const app = express();
@@ -26,7 +26,7 @@ app.use(helmet());
 app.use(morgan('tiny'));
 
 // Apply routes before error handling
-// app.use('/', root);
+app.use('/stream', stream);
 
 // Apply error handling last
 app.use(fourOhFour);
