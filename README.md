@@ -30,4 +30,3 @@ npm run client
 ### Author
 
 Zeeshan
-[Traversy Media](http://www.traversymedia.com)
