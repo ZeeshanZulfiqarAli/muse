@@ -1,9 +1,9 @@
-import generateManifest from '../../services/manifest.js';
+import getManifest from '../../services/manifest.js';
 
 const getStream = (req, res) => {
     console.log('getstream');
 
-    const manifest = generateManifest();
+    const manifest = getManifest();
 
     res.setHeader('Content-Type', 'application/vnd.apple.mpegurl')
         .status(200)

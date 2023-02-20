@@ -14,6 +14,11 @@ const config = {
         development: process.env['DEV_ORIGIN'] ?? '*',
         production: process.env['PROD_ORIGIN'] ?? 'none',
     },
+
+    db: {
+        name: process.env['DB_NAME'],
+        uri: process.env['MONGO_CONNECTION']
+    }
 };
 
 export default config;
