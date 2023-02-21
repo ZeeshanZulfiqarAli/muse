@@ -1,31 +1,33 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
 const Control = () => {
+    const [startStream, setStartStream] = useState(false);
+    const hls = useRef();
     const videoRef = useRef();
-    // TODO: add button and support for stopping and resuming music
-    // const [startStream, setStartStream] = React.useState(false);
-
-    // const triggerChange = () => {
-    //   setStartStream((_isStarted) => !_isStarted);
-    // };
 
     useEffect(() => {
-        const url = "http://0.0.0.0:5000/stream/playlist.m3u8"
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(videoRef.current);
+        const url = 'http://0.0.0.0:5000/stream/playlist.m3u8';
+        if (startStream) {
+            if (Hls.isSupported()) {
+                hls.current = new Hls();
+                hls.current.loadSource(url);
+                hls.current.attachMedia(videoRef.current);
+                videoRef.current.play();
+            }
+        } else if (hls.current) {
+            hls.current.destroy();
         }
-    }, []);
+    }, [startStream]);
+
+    const toggleStream = () => {
+        setStartStream((s) => !s);
+    };
 
     return (
         <>
-            {/* <button onClick={triggerChange}>{startStream ? 'Stop' : 'Start'}</button> */}
-            <video id="video" controls autoPlay ref={videoRef} />
-            {/* <video controls autoPlay name="test">
-                <source src="http://0.0.0.0:5000/stream" type="audio/mpeg" />
-            </video> */}
+            <button onClick={toggleStream}>{startStream ? 'Stop' : 'Start'}</button>
+            <video id="video" autoPlay ref={videoRef} />
         </>
     );
 };
