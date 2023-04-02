@@ -4,6 +4,7 @@ import Control from './components/Control';
 import CanvasWrapper from './components/CanvasWrapper';
 import SocketProvider from './contexts/SocketProvider';
 
+// test change
 function App() {
     return (
         <SocketProvider>
