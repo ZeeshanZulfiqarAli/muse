@@ -8,3 +8,12 @@ body {
     padding: 0;
     margin: 0;
 }
+
+canvas {
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas:focus-visible {
+    outline: none;
+}

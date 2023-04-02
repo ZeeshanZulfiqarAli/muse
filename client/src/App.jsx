@@ -8,8 +8,8 @@ function App() {
     return (
         <SocketProvider>
             <div className="App">
-                {/* <CanvasWrapper /> */}
-                <Control />
+                <CanvasWrapper />
+                {/* <Control /> */}
             </div>
         </SocketProvider>
     );
