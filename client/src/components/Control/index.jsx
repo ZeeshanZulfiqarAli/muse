@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
 const Control = () => {
-    const [startStream, setStartStream] = useState(true);
+    const [startStream, setStartStream] = useState(false);
     const hls = useRef();
     const videoRef = useRef();
 
@@ -32,7 +32,7 @@ const Control = () => {
 
     return (
         <>
-            <button onClick={toggleStream}>{startStream ? 'Stop' : 'Start'}</button>
+            <button onClick={toggleStream} className='stream-play'>{startStream ? 'Stop' : 'Start'}</button>
             <video id="video" autoPlay ref={videoRef} />
         </>
     );

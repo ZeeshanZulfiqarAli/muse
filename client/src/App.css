@@ -17,3 +17,9 @@ canvas {
 canvas:focus-visible {
     outline: none;
 }
+
+.stream-play {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
