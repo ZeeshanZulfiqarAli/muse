@@ -7,7 +7,7 @@ const Control = () => {
     const videoRef = useRef();
 
     useEffect(() => {
-        const url = 'http://0.0.0.0:5000/stream/playlist.m3u8';
+        const url = `${process.env.REACT_APP_API_URL}/stream/playlist.m3u8`;
         if (startStream) {
             if (Hls.isSupported()) {
                 hls.current = new Hls();

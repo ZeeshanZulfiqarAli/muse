@@ -10,7 +10,7 @@ function App() {
         <SocketProvider>
             <div className="App">
                 <CanvasWrapper />
-                {/* <Control /> */}
+                <Control />
             </div>
         </SocketProvider>
     );

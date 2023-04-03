@@ -1,6 +1,4 @@
 import { Suspense, useEffect, useState, useContext } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 
 import Model from '../Model';
 import { SocketContext } from '../../contexts/SocketProvider';
