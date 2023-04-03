@@ -7,12 +7,12 @@ import config from './config.js';
 import errorHandler from './middleware/errorHandler.js';
 import fourOhFour from './middleware/404.js';
 import stream from './routes/stream.js';
-import initSocket from './socket/index.js';
+// import initSocket from './socket/index.js';
 
 const app = express();
 
 const httpServer = createServer(app);
-const io = initSocket(httpServer);
+// const io = initSocket(httpServer);
 
 // Apply most middleware first
 // app.use(express.json())
@@ -27,6 +27,8 @@ app.use(morgan('tiny'));
 
 // Apply routes before error handling
 app.use('/stream', stream);
+
+app.get('/hello', (req, res) => res.send('hello there'));
 
 // Apply error handling last
 app.use(fourOhFour);

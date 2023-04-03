@@ -1,7 +1,6 @@
 import getManifest from '../../services/manifest.js';
 
 const getStream = (req, res) => {
-    console.log('getstream');
 
     const manifest = getManifest();
 

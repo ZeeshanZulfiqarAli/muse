@@ -11,7 +11,6 @@ import {
     ImageProcessingConfiguration,
     Scene,
 } from '@babylonjs/core';
-import voxelRoom from '../../model/voxel-room v3 6.glb';
 import '@babylonjs/loaders';
 
 const forceUV1 = new Set(['painting 1', 'painting 2', 'painting 3']);
@@ -24,7 +23,7 @@ const Model = () => {
         camera.setTarget(Vector3.Zero());
 
         // Append glTF model to scene.
-        SceneLoader.Append(voxelRoom, '', scene, function (scene) {
+        SceneLoader.Append(process.env.REACT_APP_MODEL_URL, '', scene, function (scene) {
             scene.materials.forEach((material) => {
                 const textures = material.getActiveTextures();
 
@@ -41,7 +40,6 @@ const Model = () => {
                 }
                 textures.forEach((texture) => {
                     texture.coordinatesIndex = hasTwoUVSets ? 1 : 0;
-                    console.log(texture.name, hasTwoUVSets ? 1 : 0);
                 });
             });
 

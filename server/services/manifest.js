@@ -32,7 +32,7 @@ const generateManifest = async () => {
             segmentManifest.push(
                 `#EXT-X-PROGRAM-DATE-TIME:${dateString}`,
                 `#EXTINF:${duration},`,
-                `https://muse-library.s3.ap-south-1.amazonaws.com/${currentMedia.name}${i}.ts`
+                `${process.env.CHUNK_URL}/${currentMedia.name}${i}.ts`
             );
             mediaChunksData.push(segmentManifest);
             i++;

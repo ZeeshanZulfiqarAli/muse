@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
 const Control = () => {
-    const [startStream, setStartStream] = useState(false);
+    const [startStream, setStartStream] = useState(true);
     const hls = useRef();
     const videoRef = useRef();
 
     useEffect(() => {
         const url = `${process.env.REACT_APP_API_URL}/stream/playlist.m3u8`;
+
         if (startStream) {
             if (Hls.isSupported()) {
                 hls.current = new Hls();
@@ -23,6 +24,11 @@ const Control = () => {
     const toggleStream = () => {
         setStartStream((s) => !s);
     };
+
+    // useEffect(() => {
+    //     // toggleStream();
+    // }, []);
+    // // window.toggleStream = toggleStream;
 
     return (
         <>
