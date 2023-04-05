@@ -28,7 +28,7 @@ app.use(morgan('tiny'));
 // Apply routes before error handling
 app.use('/stream', stream);
 
-app.get('/hello', (req, res) => res.send('hello there'));
+app.get('/health', (req, res) => res.send('healthy'));
 
 // Apply error handling last
 app.use(fourOhFour);
