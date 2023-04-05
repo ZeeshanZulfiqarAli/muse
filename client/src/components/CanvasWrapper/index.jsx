@@ -23,7 +23,5 @@ export default function CanvasWrapper() {
     //     };
     // }, [socket]);
 
-    return (
-        <Model />
-    );
+    return <Model />;
 }

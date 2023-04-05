@@ -7,6 +7,7 @@
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 canvas {
@@ -20,6 +21,63 @@ canvas:focus-visible {
 
 .stream-play {
     position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.stream-play svg,
+.socials svg {
+    fill: #c8c8c8;
+    height: 15px;
+}
+
+video {
+    display: none;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: #282828e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.overlay h4 {
+    color: #c8c8c8;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.overlay h5 {
+    color: #9f9f9f;
+    cursor: pointer;
+}
+
+.overlay h4:hover,
+.overlay h5:hover {
+    text-decoration: underline dotted;
+    text-underline-offset: 0.4rem;
+}
+
+.socials {
+    position: absolute;
+    color: #c8c8c8;
     bottom: 0;
-    left: 0;
+    right: 0;
+    display: flex;
+    gap: 13px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    align-items: center;
 }

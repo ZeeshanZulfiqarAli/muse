@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
+import { ReactComponent as VolumeHighSVG } from '../../icons/volume-high-solid.svg';
+import { ReactComponent as VolumeXMark } from '../../icons/volume-xmark-solid.svg';
 
-const Control = () => {
+const Control = ({ showOverlayOnStart }) => {
     const [startStream, setStartStream] = useState(false);
+    const [overlayClosed, setOverlayClosed] = useState(false);
     const hls = useRef();
     const videoRef = useRef();
 
@@ -25,15 +28,27 @@ const Control = () => {
         setStartStream((s) => !s);
     };
 
-    // useEffect(() => {
-    //     // toggleStream();
-    // }, []);
-    // // window.toggleStream = toggleStream;
+    const startRadio = () => {
+        toggleStream();
+        closeOverlay();
+    };
+
+    const closeOverlay = () => {
+        setOverlayClosed(true);
+    };
 
     return (
         <>
-            <button onClick={toggleStream} className='stream-play'>{startStream ? 'Stop' : 'Start'}</button>
+            <button onClick={toggleStream} className="stream-play">
+                {startStream ? <VolumeHighSVG /> : <VolumeXMark />}
+            </button>
             <video id="video" autoPlay ref={videoRef} />
+            {showOverlayOnStart && !overlayClosed && (
+                <div className="overlay">
+                    <h4 onClick={startRadio}>Click to start radio</h4>
+                    <h5 onClick={closeOverlay}>No thanks</h5>
+                </div>
+            )}
         </>
     );
 };
