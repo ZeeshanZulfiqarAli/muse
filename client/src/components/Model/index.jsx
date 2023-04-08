@@ -12,7 +12,7 @@ import {
     Scene,
 } from '@babylonjs/core';
 import '@babylonjs/loaders';
-import voxelRoom from '../../model/voxel-room v3 6.glb';
+import voxelRoom from '../../model/voxel-room v3 7.glb';
 
 const forceUV1 = new Set(['painting 1', 'painting 2', 'painting 3', 'glass']);
 // const forceDuplicateTexture = new Set(['', 'Cube.198'])
