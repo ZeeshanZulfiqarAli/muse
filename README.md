@@ -5,6 +5,9 @@ Production: https://museradio.live/
 ## Inspiration
 Inpired by the lofi girl videos with the idea of making it interactive.
 
+## Limitations
+Does not work on mobile devices right now, but you can use this on desktop, laptop or tablet just fine.
+
 ## Quick Start
 
 ``` bash
